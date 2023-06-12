@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>
+			{% block title %}Random Quotes
+			{% endblock %}
+		</title>
+        <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="/css/nes.min.css">
+		<link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+
+	</head>
+	<body class="body">
+		{% include 'common/_nav.html.twig'%}
+		{% block body %}{% endblock %}
+	</body>
+</html>

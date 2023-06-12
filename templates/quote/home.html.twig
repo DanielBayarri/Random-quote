@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ parent() }} {% endblock %}
+
+{% block body %}
+  <h1>Welcome to Random Quotes!!</h1>
+
+<div class="nes-container is-rounded with-title random-quote" class="">
+  <p class="title">Random Quote of:<span class="nes-text is-primary">{{quote.name}}</span></p>
+    <section class="message -left quote">
+      <!-- Balloon -->
+      <div class="nes-balloon from-left ">
+        <p>{{quote.description}}</p>
+      </div>
+      <img src="/assets/img/{{quote.photo}}" width="100px"  alt="">
+    </section>
+  
+</div>
+{% endblock %}

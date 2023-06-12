@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Users List
+{% endblock %}
+
+{% block body %}
+	<div class="nes-container with-title is-centered formulario">
+		<p class="title">Create new User</p>
+		{{form(registration_form)}}
+		</div>
+
+		<table class="nes-container is-dark with-title table-users">
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Email</th>
+					<th>Biography</th>
+					<th>Actions</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for user in users %}
+
+					<tr>
+						<td>{{user.name}}</td>
+						<td>{{user.email}}</td>
+						<td>{{user.biography}}</td>
+						<td>
+						
+							<a href="{{path('app_user_edit', {'id' : user.id}) }}" type="button" class="nes-btn is-warning">Edit</a>
+							<a href="{{path('app_user_delete', {'id' : user.id}) }}" type="button" class="nes-btn is-error">Delete</a>
+						</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+
+	{% endblock %}

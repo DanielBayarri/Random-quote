@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Quotes List
+{% endblock %}
+
+{% block body %}
+
+	<div class="nes-container with-title is-centered formulario">
+		<p class="title">Create new quote</p>
+		{{form(form)}}
+		</div>
+
+		<div class="nes-container is-dark with-title">
+			<p class="title">List of quotes</p>
+			<ul class="nes-list is-disc">
+				{% for quote in quotes %}
+					<li>
+						{{quote.description}}
+						-
+						<span class="nes-text is-warning">{{quote.name}}</span>
+						-
+						<img src="/assets/img/{{quote.photo}}" width="20px"  alt="">
+
+					</li>
+						<a href="{{path('app_quote_edit', {'id' : quote.id}) }}" type="button" class="nes-btn is-primary">Edit</a>
+						<a href="{{path('app_quote_delete', {'id' : quote.id}) }}" type="button" class="nes-btn is-error">Delete</a>
+				{% endfor %}
+			</ul>
+		</div>
+
+	{% endblock %}
