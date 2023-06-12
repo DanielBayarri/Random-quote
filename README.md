@@ -1,2 +1,2 @@
 # Random-quote
-Programa hecho con symfony y Mysql, crud para la muestra de quotes aleatorios, con login y encriptación de contraseña
+Programa de muestra de citas aleatorias con CRUD, login y encriptación de contraseñas, desarrollado con Symfony y MySQL.
